@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Label:</strong>
+  <%= @external_witness.label %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @external_witness.url %>
+</p>
+
+<p>
+  <strong>Song:</strong>
+  <%= @external_witness.song %>
+</p>
+
+<div class="mt-4">
+  <%= link_to 'Edit', edit_external_witness_path(@external_witness) %> |
+  <%= link_to 'Back', external_witnesses_path %>
+</div>

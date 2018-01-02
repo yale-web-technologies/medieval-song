@@ -1,0 +1,26 @@
+<h2>Search</h2>
+
+<%= form_tag '/search', method: 'post', class: "mt-5 mb-5" do %>
+  <div class="form-group">
+    <label for="nimev">NIMEV</label>
+    <input type="text" class="form-control" name="search[nimev]" id="nimev">
+  </div>
+  <div class="form-group">
+    <label for="dimev">DIMEV</label>
+    <input type="text" class="form-control" name="search[dimev]" id="dimev">
+  </div>
+  <div class="form-group">
+    <label for="nimev">First line</label>
+    <input type="text" class="form-control" name="search[first-line]" id="first-line">
+  </div>
+  <div class="form-group">
+    <label for="author">Author</label>
+    <select class="form-control" id="author" name="search[author-id]">
+      <option value="">Any</option>
+      <% @authors.each do |author| %>
+        <option value="<%= author.id %>"><%= author.name %></option>
+      <% end %>
+    </select>
+  </div>
+  <button type="submit" class="btn btn-primary mt-5">Search</button>
+<% end %>

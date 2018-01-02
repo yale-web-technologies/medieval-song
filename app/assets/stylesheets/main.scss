@@ -1,0 +1,178 @@
+* {
+  font-family: YaleNew;
+}
+
+a {
+  color: $yale-blue-medium;
+  text-decoration: none;
+
+  &:hover {
+    color: $yale-blue-light;
+    text-decoration: underline;
+  }
+}
+
+.navbar {
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.nav-item {
+  margin-right: 1rem;
+}
+
+div.header {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer {
+  margin-top: 1rem;
+  background-color: $yale-blue-dark;
+  padding: 0.75rem;
+  color: $yale-gray-1;
+  text-decoration: none;
+
+  a {
+    color: $yale-gray-2;
+
+    &:hover {
+      color: $yale-gray-1;
+      text-decoration: underline;
+    }
+  }
+}
+
+.app-title {
+  font-style: italic;
+}
+
+.app-title, .page-title {
+  color: $yale-blue-medium;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  margin-top: 1.5rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p, div.p {
+  padding: 1.5rem;
+}
+
+ul {
+  padding-left: 1.1rem;
+}
+
+.dams-pre {
+  white-space: pre;
+}
+
+.dams-block-quote {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  white-space: pre-line;
+  border: solid 1px $yale-gray-3;
+  border-radius: 10px;
+  padding: 10px 15px;
+}
+
+.dams-key {
+  font-size: 1.2rem;
+  margin-right: 0.25rem;
+}
+
+.dams-collapse {
+  margin-left: 0.25rem;
+
+  .to-expand { // "+"
+    display: none;
+  }
+
+  .to-collapse { // "-"
+    display: inline-block;
+  }
+
+  &.collapsed {
+    .to-expand {
+      display: inline-block;
+    }
+
+    .to-collapse {
+      display: none;
+    }
+  }
+}
+
+.display-section {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.display-item {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+
+  .item-key {
+    color: $yale-blue-medium;
+    margin-right: 0.25rem;
+  }
+}
+
+.container.admin p {
+  padding: 0.2rem;
+}
+
+img.left {
+  float: left;
+  margin: 1.5rem;
+}
+
+.dams-nested-ul {
+  margin: 0;
+}
+
+.col-mirador {
+  min-height: 500px;
+  margin-top: 1rem;
+}
+
+.list-group-item .delete {
+  float: right;
+  color: #c00;
+  font-size: 1.2rem;
+  margin-top: 0.2rem;
+  margin-right: 0.2rem;
+
+  &:hover {
+    color: #d00;
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-right: 0;
+  }
+}
+
+.mirador-container {
+  display: block !important;
+  position: absolute !important;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+
+  * {
+    box-sizing: content-box; // To prevent Semantic UI from overriding * with "border-box".
+  }
+}
+
+.annotation-display .text-viewer p {
+  text-decoration: underline;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

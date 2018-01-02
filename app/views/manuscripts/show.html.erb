@@ -1,0 +1,30 @@
+<nav aria-label="breadcrumb" role="navigation">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">home</a></li>
+    <li class="breadcrumb-item"><a href="/admin">admin</a></li>
+    <li class="breadcrumb-item"><a href="/data/manuscripts">manuscripts</a></li>
+    <li class="breadcrumb-item active"><%= @manuscript.id %></li>
+  </ol>
+</nav>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong class="dams-key">Title:</strong><br/>
+  <%= @manuscript.title %>
+</p>
+
+<p>
+  <strong class="dams-key">Manifest url:</strong><br/>
+  <%= @manuscript.manifest_url %>
+</p>
+
+<p>
+  <strong class="dams-key">Long description:</strong><br/>
+  <%= @manuscript.long_desc %>
+</p>
+
+<div class="mt-4">
+  <%= link_to 'Edit', edit_manuscript_path(@manuscript) %> |
+  <%= link_to 'List', manuscripts_path %>
+</div>

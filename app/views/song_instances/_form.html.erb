@@ -1,0 +1,64 @@
+<%= form_for(song_instance) do |f| %>
+  <% if song_instance.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(song_instance.errors.count, "error") %> prohibited this song_instance from being saved:</h2>
+
+      <ul>
+      <% song_instance.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :label %>
+    <%= f.text_field :label, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :song_text %>
+    <%= f.text_area :song_text, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :folio %>
+    <%= f.text_field :folio, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :verse_form %>
+    <%= f.text_field :verse_form, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <label for="manuscript">Manuscript</label>
+    <select class="form-control" id="manuscript" name="song_instance[manuscript_id]">
+      <% @manuscripts.each do |manuscript| %>
+        <%
+          if @manuscript_id == manuscript.id
+            selected = 'selected'
+          else
+            selected = ''
+          end
+        %>
+        <option value="<%= manuscript.id %>" <%= selected %>><%= manuscript.title %></option>
+      <% end %>
+    </select>
+  </div>
+
+  <%= form_song_selector(songs: @songs, model_name: 'song_instance') %>
+
+  <div class="form-group">
+    <label>Annotations</label>
+    <ul>
+      <% @song_instance.annotations.each do |anno| %>
+        <li><%= link_to anno.text, "/data/annotations/#{anno.id}" %></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="actions mt-4">
+    <%= f.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>

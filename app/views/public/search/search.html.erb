@@ -1,0 +1,9 @@
+<h2 class="mb-3">Found Songs</h2>
+
+<% @songs.each do |song| %>
+  <div><%= link_to "#{song.first_line} (#{song.nimev})", "/songs/#{song.id}" %></div>
+<% end %>
+
+<% if @songs.size == 0 %>
+  <div>None found</div>
+<% end %>

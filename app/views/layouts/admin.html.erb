@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Medieval Song (admin)</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_include_tag 'dependencies-admin' %>
+    <%= javascript_pack_tag "admin/#{controller_name}" %>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Digital Archive of Medieval Song (admin)</h1>
+    </div>
+
+    <div class="container admin">
+      <div class="row">
+        <div class="col">
+          <p class="alert"><%= alert %></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

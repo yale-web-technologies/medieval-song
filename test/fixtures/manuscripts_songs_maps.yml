@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  manuscript: one
+  song: one
+
+two:
+  manuscript: two
+  song: two

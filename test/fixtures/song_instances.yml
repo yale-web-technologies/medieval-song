@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  canvas_id: MyString
+  song_text: MyText
+  folio: MyString
+  song: one
+  manuscript: one
+  verse_form: one
+
+two:
+  title: MyString
+  canvas_id: MyString
+  song_text: MyText
+  folio: MyString
+  song: two
+  manuscript: two
+  verse_form: two

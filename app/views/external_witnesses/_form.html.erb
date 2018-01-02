@@ -1,0 +1,29 @@
+<%= form_for(external_witness, html: { class: 'my-5' }) do |f| %>
+  <% if external_witness.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(external_witness.errors.count, "error") %> prohibited this external_witness from being saved:</h2>
+
+      <ul>
+      <% external_witness.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= f.label :label %>
+    <%= f.text_field :label, class: 'form-control' %>
+  </div>
+
+  <div class="field form-group>
+    <%= f.label :url %>
+    <%= f.text_field :url, class: 'form-control' %>
+  </div>
+
+  <%= form_song_selector(songs: @songs, model_name: 'external_witness') %>
+
+  <div class="action mt-4">
+    <%= f.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>

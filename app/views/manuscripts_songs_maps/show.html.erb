@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Manuscript:</strong>
+  <%= @manuscripts_songs_map.manuscript %>
+</p>
+
+<p>
+  <strong>Song:</strong>
+  <%= @manuscripts_songs_map.song %>
+</p>
+
+<%= link_to 'Edit', edit_manuscripts_songs_map_path(@manuscripts_songs_map) %> |
+<%= link_to 'Back', manuscripts_songs_maps_path %>

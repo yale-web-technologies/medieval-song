@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Manuscripts Songs Maps</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Manuscript</th>
+      <th>Song</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @manuscripts_songs_maps.each do |manuscripts_songs_map| %>
+      <tr>
+        <td><%= manuscripts_songs_map.manuscript %></td>
+        <td><%= manuscripts_songs_map.song %></td>
+        <td><%= link_to 'Show', manuscripts_songs_map %></td>
+        <td><%= link_to 'Edit', edit_manuscripts_songs_map_path(manuscripts_songs_map) %></td>
+        <td><%= link_to 'Destroy', manuscripts_songs_map, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Manuscripts Songs Map', new_manuscripts_songs_map_path %>

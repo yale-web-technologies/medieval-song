@@ -1,0 +1,2 @@
+module ExternalSongTextsHelper
+end

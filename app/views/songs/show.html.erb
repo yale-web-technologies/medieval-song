@@ -1,0 +1,44 @@
+<p>
+  <strong>First line:</strong>
+  <%= @song.first_line %>
+</p>
+
+<p>
+  <strong>NIMEV:</strong>
+  <%= @song.nimev %>
+</p>
+
+<p>
+  <strong>DIMEV:</strong>
+  <%= @song.dimev %>
+</p>
+
+<p>
+  <strong>Number of copies:</strong>
+  <%= @song.num_copies %>
+</p>
+
+<p>
+  <strong>Tags, refrains:</strong>
+  <%= @song.refrains %>
+</p>
+
+<p>
+  <strong>Biblical, liturgical refs:</strong>
+  <%= @song.refs %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= if @song.author then @song.author.name  else '' end %>
+</p>
+
+<p>
+  <strong>Theme:</strong>
+  <%= @song.theme %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_song_path(@song) %> |
+<%= link_to 'List', songs_path %>

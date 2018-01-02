@@ -1,0 +1,52 @@
+<nav aria-label="breadcrumb" role="navigation">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">home</a></li>
+    <li class="breadcrumb-item"><a href="/admin">admin</a></li>
+    <li class="breadcrumb-item"><a href="/data/song_instances">song instances</a></li>
+    <li class="breadcrumb-item active"><%= @song_instance.id %></li>
+  </ol>
+</nav>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong class="dams-key">ID:</strong>
+  <%= @song_instance.id %>
+</p>
+
+<p>
+  <strong class="dams-key">Label:</strong>
+  <%= @song_instance.label %>
+</p>
+
+<p>
+  <strong class="dams-key">Manuscript:</strong>
+  <%= link_to @manuscript.title, controller: 'manuscripts', action: 'show', id: @manuscript.id %>
+</p>
+
+<p>
+  <strong class="dams-key">Folio:</strong>
+  <%= @song_instance.folio %>
+</p>
+
+<p>
+  <strong class="dams-key">Song:</strong>
+  <%= link_to @song.first_line, controller: 'songs', action: 'show', id: @song.id %>
+</p>
+
+<p>
+  <strong class="dams-key">Verse form:</strong>
+  <%= @song_instance.verse_form %>
+</p>
+
+<p>
+  <strong class="dams-key">Song text:</strong>
+  <span class="dams-pre">
+    <%= @song_instance.song_text %>
+  </span>
+</p>
+
+<div class="mt-3">
+  <%= link_to 'Edit', edit_song_instance_path(@song_instance) %> |
+  <%= link_to 'Back', song_instances_path %>
+</div>

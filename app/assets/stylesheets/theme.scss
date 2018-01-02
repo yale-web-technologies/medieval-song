@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'YaleNew';
+  src: url(font-path('YaleNew-Roman.otf')),
+    url(font-path('YaleNew-Bold.otf')),
+    url(font-path('YaleNew-Italic.otf')),
+    url(font-path('YaleNew-BoldItalic.otf'));
+}
+
+$yale-blue-dark: #00356b;
+$yale-blue-medium: #286dc0;
+$yale-blue-light: #63aaff;
+
+$yale-gray-1: #f9f9f9; // off-white
+$yale-gray-2: #dddddd; // light gray
+$yale-gray-3: #978d85; // brownish
+$yale-gray-4: #4a4a4a; // dark gray
+$yale-gray-5: #222222; // off-black
+
+$yale-accent-green: #5f712d;
+$yale-accent-red: #bd5319;

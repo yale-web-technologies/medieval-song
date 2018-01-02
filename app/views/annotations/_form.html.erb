@@ -1,0 +1,47 @@
+<%= form_for(annotation) do |f| %>
+  <% if annotation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(annotation.errors.count, "error") %> prohibited this annotation from being saved:</h2>
+
+      <ul>
+      <% annotation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :song_instance_id %>
+    <%= f.text_field :song_instance_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :seq %>
+    <%= f.text_field :seq %>
+  </div>
+
+  <div class="field">
+    <%= f.label :text %>
+    <%= f.text_area :text %>
+  </div>
+
+  <div class="field">
+    <%= f.label :canvas_id %>
+    <%= f.text_field :canvas_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :manifest_url %>
+    <%= f.text_field :manifest_url %>
+  </div>
+
+  <div class="field">
+    <%= f.label :target_selector %>
+    <%= f.text_area :target_selector %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

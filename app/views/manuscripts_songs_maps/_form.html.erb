@@ -1,0 +1,27 @@
+<%= form_for(manuscripts_songs_map) do |f| %>
+  <% if manuscripts_songs_map.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(manuscripts_songs_map.errors.count, "error") %> prohibited this manuscripts_songs_map from being saved:</h2>
+
+      <ul>
+      <% manuscripts_songs_map.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :manuscript_id %>
+    <%= f.text_field :manuscript_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :song_id %>
+    <%= f.text_field :song_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

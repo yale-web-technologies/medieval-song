@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col-lg-12">
+    <h2><%= @manuscript.title.truncate(80) %></h2>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-7 col-mirador">
+    <div id="mirador-container"></div>
+  </div>
+  <div class="col-md-5">
+    <p>
+      <%= sanitize @manuscript.long_desc %>
+    </p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <ul>
+      <li>Browse Songs in Manuscript
+        <ul class="dams-nested-ul">
+          <% @manuscript.song_instances.each do |si| %>
+            <li><%= link_to si.label, controller: 'public/song_instances', action: 'show', id: si.id %></li>
+          <% end %>
+        </ul>
+      </li>
+      <li>Songs in Performance
+        <ul class="dams-nested-ul">
+          <% @performances.each do |p| %>
+            <li><a target="_blank" href="<%= p.url %>"><%= p.short_desc %></></li>
+          <% end %>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<script type="text/javascript">
+  (function () {
+    var state = window.DAMS.state;
+    state.miradorSettings = <%= @mirador_settings.to_json.html_safe %>;
+    state.isAdmin = <%= @is_admin %>;
+  })();
+</script>

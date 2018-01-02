@@ -1,0 +1,61 @@
+<div class="row">
+  <div class="col-lg-12">
+    <h2 class="page-title">Song: <%= @song.first_line %></h2>
+  </div>
+</div>
+
+<div class="row display-section">
+  <div class="col">
+    <div class="display-item">
+      <span class="item-key">NIMEV:</span> <%= @song.nimev %>
+    </div>
+    <div class="display-item">
+      <span class="item-key">DIMEV:</span> <%= @song.dimev %>
+    </div>
+    <div class="display-item">
+        <span class="item-key">Number of copies:</span> <%= @song.num_copies %>
+    </div>
+    <div class="display-item">
+      <span class="item-key">Burdens/refrains:</span><br/>
+      <%= @song.refrains %>
+    </div>
+    <div class="display-item">
+      <span class="item-key">Latin tags:</span><br/>
+      <%= @song.latin_tags %>
+    </div>
+    <div class="display-item">
+      <span class="item-key">Biblical/liturgical refs:</span><br/>
+      <%= @song.refs %>
+    </div>
+    <div class="display-item">
+      <span class="item-key">Author:</span> <%= if @song.author then @song.author.name else '' end %>
+    </div>
+    <div class="display-item">
+        <span class="item-key">Theme:</span><br/>
+      <%= @song.theme %>
+    </div>
+  </div>
+</div>
+
+<div class="row display-section">
+  <% if @song.song_instances.size > 0 %>
+    <div class="col-md-6 mb-4">
+      <h3>View in Mirador <%= collapse_button(target_id: 'si-list', collapsed: false) %></h3>
+      <ul class="dams-nested-ul collapse show" id="si-list">
+        <% @song.song_instances.each do |si| %>
+          <li><%= link_to si.label, controller: 'public/song_instances', action: 'show', id: si.id %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <% if @song.performances.size > 0 %>
+    <div class="col-md-6">
+      <h3>View Performances</h3>
+      <ul class="dams-nested-ul">
+        <% @song.performances.each do |p| %>
+          <li><a target="_blank" href="<%= p.url %>"><%= p.short_desc %></></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+</div>

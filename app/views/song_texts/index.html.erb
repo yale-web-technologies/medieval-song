@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Song Texts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Text</th>
+      <th>Is primary version</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @song_texts.each do |song_text| %>
+      <tr>
+        <td><%= song_text.text %></td>
+        <td><%= song_text.is_primary_version %></td>
+        <td><%= link_to 'Show', song_text %></td>
+        <td><%= link_to 'Edit', edit_song_text_path(song_text) %></td>
+        <td><%= link_to 'Destroy', song_text, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Song Text', new_song_text_path %>

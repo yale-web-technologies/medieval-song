@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Song Instance ID:</strong>
+  <%= @annotation.song_instance_id %>
+</p>
+
+<p>
+  <strong>Sequence:</strong>
+  <%= @annotation.seq %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @annotation.text %>
+</p>
+
+<p>
+  <strong>Canvas ID:</strong>
+  <%= @annotation.canvas_id %>
+</p>
+
+<p>
+  <strong>Manifest URL:</strong>
+  <%= @annotation.manifest_url %>
+</p>
+
+<p>
+  <strong>Target Selector:</strong>
+  <%= @annotation.target_selector %>
+</p>
+
+<%= link_to 'Edit', edit_annotation_path(@annotation) %> |
+<%= link_to 'Back', annotations_path %>

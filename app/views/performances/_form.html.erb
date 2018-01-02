@@ -1,0 +1,32 @@
+<%= form_for(performance) do |f| %>
+  <% if performance.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(performance.errors.count, "error") %> prohibited this performance from being saved:</h2>
+
+      <ul>
+      <% performance.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :is_primary_version %>
+    <%= f.text_field :is_primary_version %>
+  </div>
+
+  <div class="field">
+    <%= f.label :media_type %>
+    <%= f.text_field :media_type %>
+  </div>
+
+  <div class="field">
+    <%= f.label :short_desc %>
+    <%= f.text_field :short_desc %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

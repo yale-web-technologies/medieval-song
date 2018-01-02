@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Medieval Song</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+
+    <% if defined? @page_has_mirador %>
+      <%= javascript_include_tag 'dependencies-with-mirador' %>
+      <%= javascript_pack_tag 'bundle-with-mirador' %>
+    <% else %>
+      <%= javascript_include_tag 'dependencies-no-mirador' %>
+      <%= javascript_pack_tag 'bundle-no-mirador' %>
+    <% end %>
+
+    <%= yield :javascript_includes %>
+  </head>
+
+  <body>
+    <div class="container header">
+      <div class="row">
+        <div class="col">
+          <h1 class="app-title">Digital Archive of Medieval Song</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <%= render 'layouts/nav' %>
+          <% if flash[:notice] %>
+            <div class="alert alert-info">
+              <%= flash[:notice] %>
+            </div>
+          <% end %>
+          <% if flash[:alert] %>
+            <div class="alert alert-danger">
+              <%= flash[:alert] %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <%= yield %>
+        </div>
+      </div>
+      <div class="row footer mt-4">
+        <div class="col">
+          <a href="/admin">Admin</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

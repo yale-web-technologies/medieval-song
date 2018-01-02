@@ -1,0 +1,2 @@
+module ExternalWitnessesHelper
+end

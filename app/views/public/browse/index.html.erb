@@ -1,0 +1,18 @@
+<h2>Browse</h2>
+<hr/>
+
+<h3>Mauscripts</h3>
+<ul>
+  <% @manuscripts.each do |manuscript| %>
+    <li><%= link_to manuscript.title, controller: 'public/manuscripts', action: 'show', id: manuscript.id %></li>
+  <% end %>
+</ul>
+
+<h3>Songs</h3>
+
+<ul>
+  <% @songs.each do |song| %>
+    <li><%= link_to "#{song.first_line} (#{song.nimev})", controller: 'public/songs', action: 'show', id: song.id %></li>
+  <% end %>
+</ul>
+

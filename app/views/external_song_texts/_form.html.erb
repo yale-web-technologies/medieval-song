@@ -1,0 +1,34 @@
+<%= form_for(external_song_text) do |f| %>
+  <% if external_song_text.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(external_song_text.errors.count, "error") %> prohibited this external_song_text from being saved:</h2>
+
+      <ul>
+      <% external_song_text.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :short_desc %>
+    <%= f.text_area :short_desc, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :text %>
+    <%= f.text_area :text, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :url %>
+    <%= f.text_field :url, class: 'form-control' %>
+  </div>
+
+  <%= form_song_selector(songs: @songs, model_name: 'external_song_text') %>
+
+  <div class="actions mt-4">
+    <%= f.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>

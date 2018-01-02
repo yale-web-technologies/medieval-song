@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @song_text.text %>
+</p>
+
+<p>
+  <strong>Is primary version:</strong>
+  <%= @song_text.is_primary_version %>
+</p>
+
+<%= link_to 'Edit', edit_song_text_path(@song_text) %> |
+<%= link_to 'Back', song_texts_path %>
