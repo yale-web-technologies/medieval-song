@@ -7,17 +7,17 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.6'
+gem 'rails', '~> 5.1.4'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 # Use Puma as the app server
-gem 'puma', '~> 3.10.0'
+gem 'puma', '~> 3.11.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier', '>= 4.1.2'
 # Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.2'
+# gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -35,14 +35,14 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'devise', '~> 4.3.0'
+gem 'devise', '~> 4.4.0'
 gem 'omniauth-cas', '~> 1.1.1'
 gem 'omniauth-google-oauth2', '~> 0.5.2'
 gem 'pundit', '~> 1.1.0'
 
 gem 'webpacker', '~> 3.2.0'
-gem 'popper_js', '~> 1.12.5' # requried for some bootstrap components (dropdown, etc.)
-gem 'bootstrap', '~> 4.0.0.beta2.1'
+gem 'popper_js', '~> 1.12.9' # requried for some bootstrap components (dropdown, etc.)
+gem 'bootstrap', '~> 4.0.0.beta3'
 
 gem 'handlebars_assets', '~> 0.23.2'
 
