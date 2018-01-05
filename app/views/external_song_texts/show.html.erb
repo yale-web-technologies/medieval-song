@@ -1,4 +1,24 @@
 <p id="notice"><%= notice %></p>
 
+<p>
+  <strong>Short Desc:</strong>
+  <%= @external_song_text.short_desc %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @external_song_text.text %>
+</p>
+
+<p>
+  <strong>URL:</strong>
+  <a target="_blank" href="<%= @external_song_text.url %>"><%= @external_song_text.url %></a>
+</p>
+
+<p>
+  <strong>Song:</strong>
+  <a target="_blank" href="/data/songs/<%= @external_song_text.song.id %>"><%= @external_song_text.song.first_line %></a>
+</p>
+
 <%= link_to 'Edit', edit_external_song_text_path(@external_song_text) %> |
 <%= link_to 'Back', external_song_texts_path %>

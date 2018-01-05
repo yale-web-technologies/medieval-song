@@ -15,11 +15,13 @@ class PerformancesController < ApplicationController
 
   # GET /performances/new
   def new
+    @songs = Song.all
     @performance = Performance.new
   end
 
   # GET /performances/1/edit
   def edit
+    @songs = Song.all
   end
 
   # POST /performances

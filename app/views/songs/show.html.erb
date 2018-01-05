@@ -1,44 +1,79 @@
 <p>
-  <strong>First line:</strong>
+  <strong class="dams-key">First line:</strong><br/>
   <%= @song.first_line %>
 </p>
 
 <p>
-  <strong>NIMEV:</strong>
+  <strong class="dams-key">NIMEV:</strong>
   <%= @song.nimev %>
 </p>
 
 <p>
-  <strong>DIMEV:</strong>
+  <strong class="dams-key">DIMEV:</strong>
   <%= @song.dimev %>
 </p>
 
 <p>
-  <strong>Number of copies:</strong>
+  <strong class="dams-key">Number of copies:</strong>
   <%= @song.num_copies %>
 </p>
 
 <p>
-  <strong>Tags, refrains:</strong>
+  <strong class="dams-key">Refrains:</strong>
   <%= @song.refrains %>
 </p>
 
 <p>
-  <strong>Biblical, liturgical refs:</strong>
+  <strong class="dams-key">Latin tags:</strong>
+  <%= @song.latin_tags %>
+</p>
+
+<p>
+  <strong class="dams-key">Biblical, liturgical refs:</strong>
   <%= @song.refs %>
 </p>
 
 <p>
-  <strong>Author:</strong>
-  <%= if @song.author then @song.author.name  else '' end %>
+  <strong class="dams-key">Author:</strong>
+  <% if @song.author %>
+    <a target="_blank" href="<%= "/data/authors/#{@song.author.id}" %>"><%= @song.author.name %></a>
+  <% end %>
 </p>
 
 <p>
-  <strong>Theme:</strong>
+  <strong class="dams-key">Theme:</strong>
   <%= @song.theme %>
 </p>
 
+<p>
+  <strong class="dams-key">Manuscripts:</strong><br/>
+  <% @song.manuscripts.each do |m| %>
+    <a target="_blank" href="<%= "/data/manuscripts/#{m.id}" %>"><%= m.title %></a>
+  <% end %>
+</p>
 
+<p>
+  <strong class="dams-key">Song instances:</strong><br/>
+  <% @song.song_instances.each do |si| %>
+    <a target="_blank" href="<%= "/data/song_instances/#{si.id}" %>"><%= si.label %></a>
+  <% end %>
+</p>
 
-<%= link_to 'Edit', edit_song_path(@song) %> |
-<%= link_to 'List', songs_path %>
+<p>
+  <strong class="dams-key">External song texts:</strong><br/>
+  <% @song.external_song_texts.each do |t| %>
+    <a target="_blank" href="<%= "/data/external_song_texts/#{t.id}" %>"><%= t.short_desc %></a>
+  <% end %>
+</p>
+
+<p>
+  <strong class="dams-key">Performances:</strong><br/>
+  <% @song.performances.each do |p| %>
+    <a target="_blank" href="<%= "/data/performances/#{p.id}" %>"><%= p.short_desc %></a>
+  <% end %>
+</p>
+
+<div class="mt-4">
+  <%= link_to 'Edit', edit_song_path(@song) %> |
+  <%= link_to 'List', songs_path %>
+</div>

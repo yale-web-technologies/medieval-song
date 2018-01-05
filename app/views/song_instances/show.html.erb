@@ -21,7 +21,7 @@
 
 <p>
   <strong class="dams-key">Manuscript:</strong>
-  <%= link_to @manuscript.title, controller: 'manuscripts', action: 'show', id: @manuscript.id %>
+  <a target="_blank" href="<%= "/data/manuscripts/#{@manuscript.id}" %>"><%= @manuscript.title %></a>
 </p>
 
 <p>
@@ -31,7 +31,7 @@
 
 <p>
   <strong class="dams-key">Song:</strong>
-  <%= link_to @song.first_line, controller: 'songs', action: 'show', id: @song.id %>
+  <a target="_blank" href="<%= "/data/songs/#{@song.id}" %>"><%= @song.first_line %></a>
 </p>
 
 <p>
@@ -44,6 +44,15 @@
   <span class="dams-pre">
     <%= @song_instance.song_text %>
   </span>
+</p>
+
+<p>
+  <strong class="dams-key">Annotations:</strong>
+  <ul>
+    <% @song_instance.annotations.each do |anno| %>
+      <li><a target="_blank" href="<%= "/data/annotations/#{anno.id}" %>"><%= anno.text %></a></li>
+    <% end %>
+  </ul>
 </p>
 
 <div class="mt-3">

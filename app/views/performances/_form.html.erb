@@ -11,22 +11,24 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :is_primary_version %>
-    <%= f.text_field :is_primary_version %>
-  </div>
-
-  <div class="field">
+  <div class="form-group">
     <%= f.label :media_type %>
-    <%= f.text_field :media_type %>
+    <%= f.text_field :media_type, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
+    <%= f.label :url %>
+    <%= f.text_field :url, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
     <%= f.label :short_desc %>
-    <%= f.text_field :short_desc %>
+    <%= f.text_field :short_desc, class: 'form-control' %>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
+  <%= form_song_selector(songs: @songs, model_name: 'performance') %>
+
+  <div class="actions mt-4">
+    <%= f.submit class: 'btn btn-primary' %>
   </div>
 <% end %>

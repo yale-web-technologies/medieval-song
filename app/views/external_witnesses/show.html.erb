@@ -1,18 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Label:</strong>
+  <strong class="dams-key">Label:</strong>
   <%= @external_witness.label %>
 </p>
 
 <p>
-  <strong>Url:</strong>
+  <strong class="dams-key">Url:</strong><br/>
   <%= @external_witness.url %>
 </p>
 
 <p>
-  <strong>Song:</strong>
-  <%= @external_witness.song %>
+  <strong class="dams-key">Song:</strong>
+  <a target="_blank" href="<%= "/data/songs/#{@external_witness.song.id}" %>"><%= @external_witness.song.first_line %></a>
 </p>
 
 <div class="mt-4">

@@ -16,12 +16,21 @@
 
 <p>
   <strong class="dams-key">Manifest url:</strong><br/>
-  <%= @manuscript.manifest_url %>
+  <a target="_blank" href="<%= @manuscript.manifest_url %>"><%= @manuscript.manifest_url %></a>
 </p>
 
 <p>
   <strong class="dams-key">Long description:</strong><br/>
   <%= @manuscript.long_desc %>
+</p>
+
+<p>
+  <strong class="dams-key">Song instances:</strong><br/>
+  <ul>
+    <% @manuscript.song_instances.each do |si| %>
+      <li><a target="_blank" href="<%= "/data/song_instances/#{si.id}" %>"><%= si.label %></a></li>
+    <% end %>
+  </ul>
 </p>
 
 <div class="mt-4">

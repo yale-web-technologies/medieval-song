@@ -18,7 +18,7 @@ module ApplicationHelper
 
       html.concat(%{<option value="#{song.id}" #{selected}>#{song.first_line}</option>})
     end
-    html.concat('</select>')
+    html.concat('</select></div>')
     html.html_safe
   end
 

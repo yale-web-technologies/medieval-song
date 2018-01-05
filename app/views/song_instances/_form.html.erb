@@ -53,7 +53,7 @@
     <label>Annotations</label>
     <ul>
       <% @song_instance.annotations.each do |anno| %>
-        <li><%= link_to anno.text, "/data/annotations/#{anno.id}" %></li>
+        <li><a target="_blank" href="<%= "/data/annotations/#{anno.id}" %>"><%= anno.text %></a></li>
       <% end %>
     </ul>
   </div>

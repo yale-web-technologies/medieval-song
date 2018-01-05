@@ -11,37 +11,37 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :song_instance_id %>
-    <%= f.text_field :song_instance_id %>
+    <%= f.text_field :song_instance_id, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :seq %>
-    <%= f.text_field :seq %>
+    <%= f.text_field :seq, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :text %>
-    <%= f.text_area :text %>
+    <%= f.text_area :text, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :canvas_id %>
-    <%= f.text_field :canvas_id %>
+    <%= f.text_field :canvas_id, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :manifest_url %>
-    <%= f.text_field :manifest_url %>
+    <%= f.text_field :manifest_url, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= f.label :target_selector %>
-    <%= f.text_area :target_selector %>
+  <div class="form-group">
+    <%= f.label :target_selector %><br/>
+    <%= f.text_area :target_selector, rows: "10", class: 'form-control'%>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
+  <div class="actions mt-4">
+    <%= f.submit class: 'btn btn-primary' %>
   </div>
 <% end %>

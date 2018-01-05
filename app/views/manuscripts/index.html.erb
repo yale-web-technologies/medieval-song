@@ -23,8 +23,8 @@
   <tbody>
     <% @manuscripts.each do |manuscript| %>
       <tr>
-        <td><%= manuscript.title.truncate(20) %></td>
-        <td><%= manuscript.manifest_url.truncate(20) %></td>
+        <td><%= manuscript.title.truncate(30) %></td>
+        <td><a target="_blank" href="<%= manuscript.manifest_url %>"><%= manuscript.manifest_url.truncate(20) %></td>
         <td><%= manuscript.long_desc.truncate(20) %></td>
         <td><%= link_to 'Show', manuscript %></td>
         <td><%= link_to 'Edit', edit_manuscript_path(manuscript) %></td>

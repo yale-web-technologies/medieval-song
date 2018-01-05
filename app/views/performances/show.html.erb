@@ -1,19 +1,27 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Is primary version:</strong>
-  <%= @performance.is_primary_version %>
+  <strong class="dams-key">Type:</strong>
+  <%= @performance.media_type %>
+</p>
+
+
+<p>
+  <strong class="dams-key">URL:</strong><br/>
+  <%= @performance.url %>
 </p>
 
 <p>
-  <strong>Type:</strong>
-  <%= @performance.type %>
-</p>
-
-<p>
-  <strong>Short desc:</strong>
+  <strong class="dams-key">Short desc:</strong><br/>
   <%= @performance.short_desc %>
 </p>
 
-<%= link_to 'Edit', edit_performance_path(@performance) %> |
-<%= link_to 'Back', performances_path %>
+<p>
+  <strong class="dams-key">Song:</strong>
+  <a target="_blank" href="<%= "/data/songs/#{@performance.song.id}" %>"><%= @performance.song.first_line %></a>
+</p>
+
+<div class="mt-4"></div>
+  <%= link_to 'Edit', edit_performance_path(@performance) %> |
+  <%= link_to 'Back', performances_path %>
+</div>
