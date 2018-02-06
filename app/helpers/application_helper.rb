@@ -21,12 +21,4 @@ module ApplicationHelper
     html.concat('</select></div>')
     html.html_safe
   end
-
-  def display_witness(witness)
-    if witness.url && witness.url.strip != ''
-      %{<a target="_blank" href="#{witness.url}">#{witness.label}</a>}.html_safe
-    else
-      witness.label
-    end
-  end
 end

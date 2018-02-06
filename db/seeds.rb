@@ -120,14 +120,25 @@ SongInstance.create(label: 'Hyele be in 19.3.1',
 )
 
 SongInstance.create(label: 'Hyele be in Mendeville (fake)',
-song_text: %q(A alligators all around
-B bursting balloons
-C catching cold
-D doing dishes),
-song: heyle,
-manuscript: mandeville,
-folio: 'ff. 1',
-verse_form: 'ABCD'
+  song_text: %q(A alligators all around
+  B bursting balloons
+  C catching cold
+  D doing dishes),
+  song: heyle,
+  manuscript: mandeville,
+  folio: 'ff. 1',
+  verse_form: 'ABCD'
+)
+
+SongInstance.create(label: 'Hyele be in Grimestone (fake)',
+  song_text: %q(E entertaining elephants
+  F forever fooling
+  G getting giggles
+  H having headaches),
+  song: heyle,
+  manuscript: john,
+  folio: 'ff. 14',
+  verse_form: 'EFGH'
 )
 
 ExternalWitness.create(

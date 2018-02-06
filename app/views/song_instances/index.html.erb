@@ -29,9 +29,9 @@
       <tr>
         <td><%= si.id %></td>
         <td><%= si.label %></td>
-        <td><%= si.manuscript.title.truncate(50) %></td>
-        <td><%= si.song.first_line.truncate(20) %></td>
-        <td><%= si.song_text.truncate(20) %></td>
+        <td><%= si.manuscript.title.truncate(80) %></td>
+        <td><%= si.song.first_line.truncate(80) %></td>
+        <td><%= si.song_text.truncate(40) %></td>
         <td><%= si.folio %></td>
         <td><%= si.verse_form %></td>
         <td><%= link_to 'Show', si %></td>

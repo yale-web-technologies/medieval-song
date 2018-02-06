@@ -10,7 +10,7 @@ class Annotation < ApplicationRecord
       'resource' => [{
         '@type' => 'dctypes:Text',
         'format' => 'text/html',
-        'chars' => text,
+        'chars' => song_instance.label,
         'metadata' => {
           'songInstanceId' => song_instance_id,
           'sequence' => seq

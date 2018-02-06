@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   get '/annotations/:id', to: 'public/annotations#show'
   get '/manuscripts/:id', to: 'public/manuscripts#show'
+  get '/song_instances', to: 'public/song_instances#index'
   get '/song_instances/:id', to: 'public/song_instances#show'
   get '/songs/:id', to: 'public/songs#show'
   get '/search', to: 'public/search#index'

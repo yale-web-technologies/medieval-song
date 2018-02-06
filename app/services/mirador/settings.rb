@@ -4,7 +4,7 @@ module Mirador
       {
         id: 'mirador-container',
         buildPath: '/mirador/',
-        mainMenuSettings: { show: false },
+        mainMenuSettings: { show: true },
         windowSettings: {
           sidePanel: false,
           canvasControls: {
@@ -17,7 +17,7 @@ module Mirador
               manipulationLayer: false
             }
           },
-          displayLayout: false,
+          displayLayout: true,
           externalAnnotationWindowButton: false
         },
         annotationBodyEditor: {
@@ -33,12 +33,13 @@ module Mirador
     def self.config(options = {})
       manifest_url = options[:manifest_url]
       canvas_id = options[:canvas_id]
+      other_manifests = options[:other_manifests] || []
       is_admin = options[:is_admin]
 
       settings = self.default.update({
         data: [{
           manifestUri: manifest_url
-        }],
+        }] + other_manifests,
         windowObjects: [{
           loadedManifest: manifest_url
         }]

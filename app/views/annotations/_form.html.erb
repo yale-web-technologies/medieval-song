@@ -12,8 +12,9 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :song_instance_id %>
-    <%= f.text_field :song_instance_id, class: 'form-control' %>
+    <%= f.label :song_instance_id %><br/>
+    <%= annotation.song_instance_id %> -
+    <%= link_to annotation.song_instance.label, "/data/song_instances/#{annotation.song_instance_id}", target: '_blank' %>
   </div>
 
   <div class="form-group">
@@ -28,17 +29,17 @@
 
   <div class="form-group">
     <%= f.label :canvas_id %>
-    <%= f.text_field :canvas_id, class: 'form-control' %>
+    <%= f.text_field :canvas_id, class: 'form-control', readonly: true %>
   </div>
 
   <div class="form-group">
     <%= f.label :manifest_url %>
-    <%= f.text_field :manifest_url, class: 'form-control' %>
+    <%= f.text_field :manifest_url, class: 'form-control', readonly: true %>
   </div>
 
   <div class="form-group">
     <%= f.label :target_selector %><br/>
-    <%= f.text_area :target_selector, rows: "10", class: 'form-control'%>
+    <%= f.text_area :target_selector, rows: "10", class: 'form-control', readonly: true %>
   </div>
 
   <div class="actions mt-4">

@@ -15,8 +15,13 @@
       DIMEV: <%= @song.dimev %><br/>
       Other Witnesses
       <ul class="dams-nested-ul">
+        <% @other_instances.each do |instance| %>
+          <li><%= display_instance(instance) %></li>
+        <% end %>
+      </ul>
+      <ul class="dams-nested-ul">
         <% @song.external_witnesses.each do |witness| %>
-          <li><%= display_witness(witness) %></li>
+          <li><%= display_external_witness(witness) %></li>
         <% end %>
       </ul>
     </div>

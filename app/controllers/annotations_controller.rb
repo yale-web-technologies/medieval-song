@@ -65,6 +65,15 @@ class AnnotationsController < ApplicationController
     end
   end
 
+  def destroy
+    @annotation = Annotation.find(params['id'].to_i)
+    @annotation.destroy
+    respond_to do |format|
+      format.html { redirect_to annotations_url, notice: 'Annotation was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
   private
 
   # Takes POST request params and returns an Annotation model object

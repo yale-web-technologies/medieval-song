@@ -1,4 +1,4 @@
-// mirador-proxy 074ba2d built Mon Nov 27 2017 15:46:23 GMT-0500 (EST)
+// mirador-proxy v0.1.1-0-g7ce76c2 built Tue Feb 06 2018 14:27:14 GMT-0500 (EST)
 
 
 /******/ (function(modules) { // webpackBootstrap
@@ -211,6 +211,11 @@ var WindowProxy = function () {
       return this.window.manifest;
     }
   }, {
+    key: 'getManifestUri',
+    value: function getManifestUri() {
+      return this.window.manifest.uri;
+    }
+  }, {
     key: 'getCurrentCanvasId',
     value: function getCurrentCanvasId() {
       return this.window.canvasID;
@@ -399,6 +404,24 @@ var MiradorProxy = function () {
     key: 'unmarkEventToBeIgnored',
     value: function unmarkEventToBeIgnored(eventName) {
       this._ignoredEvents.delete(eventName);
+    }
+  }, {
+    key: 'addWindow',
+    value: function addWindow(params) {
+      var workspace = this.getWorkspaceProxy().getWorkspace();
+      var emptySlot = workspace.getAvailableSlot();
+
+      if (!emptySlot) {
+        var slots = workspace.slots;
+        var baseSlot = slots[slots.length - 1];
+        this.publish('SPLIT_RIGHT', baseSlot);
+      }
+
+      var windowConfig = {
+        loadedManifest: params.manifestId,
+        canvasID: params.canvasId
+      };
+      this.publish('ADD_WINDOW', windowConfig);
     }
   }]);
 
