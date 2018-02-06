@@ -20,7 +20,7 @@ class Public::ManuscriptsController < ApplicationController
   private
 
   def get_performances(manuscript)
-    songs = manuscript.song_instances.collect { |si| si.song }
+    songs = manuscript.song_instances.collect { |si| si.song }.uniq
     songs.reduce([]) { |perfs, song|  perfs + song.performances }
   end
 end
