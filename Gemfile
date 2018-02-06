@@ -49,6 +49,7 @@ gem 'handlebars_assets', '~> 0.23.2'
 gem 'kaminari', '~> 1.1.1' # pagenation
 
 group :development, :test do
+  gem 'rspec-rails', '~> 3.7'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', '~> 9.1', platform: :mri
 end

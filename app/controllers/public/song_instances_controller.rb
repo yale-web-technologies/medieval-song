@@ -24,9 +24,7 @@ class Public::SongInstancesController < ApplicationController
     @title = @song_instance.label
     @manuscript = @song_instance.manuscript
     @song = @song_instance.song
-    @other_instances = @song.song_instances.select do |si|
-      si.manuscript == @manuscript && si.id != @song_instance.id
-    end
+    @other_instances = @song_instance.other_witnesses
 
     if current_user && current_user.role == 'admin'
       @is_admin = true
