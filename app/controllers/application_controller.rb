@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception, prepend: true
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
+  before_action :check_admin
+
   def login
     authenticate_user!
     redirect_to root_path
@@ -18,5 +20,13 @@ class ApplicationController < ActionController::Base
   def user_not_authorized
     flash[:alert] = "You are not authorized for administrative functions."
     redirect_to(request.referrer || root_path)
+  end
+
+  def check_admin
+    if current_user && current_user.role == 'admin'
+      @is_admin = true
+    else
+      @is_admin = false
+    end
   end
 end

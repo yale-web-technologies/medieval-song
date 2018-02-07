@@ -9,13 +9,8 @@
 
     <%= stylesheet_link_tag 'application', media: 'all' %>
 
-    <% if defined? @page_has_mirador %>
-      <%= javascript_include_tag 'dependencies-with-mirador' %>
-      <%= javascript_pack_tag 'bundle-with-mirador' %>
-    <% else %>
-      <%= javascript_include_tag 'dependencies-no-mirador' %>
-      <%= javascript_pack_tag 'bundle-no-mirador' %>
-    <% end %>
+    <%= javascript_include_tag 'dependencies-public' %>
+    <%= javascript_pack_tag 'main' %>
 
     <%= yield :javascript_includes %>
   </head>

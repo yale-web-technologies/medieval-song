@@ -1,0 +1,8 @@
+<script type="text/javascript">
+(function () {
+  var state = window.DAMS.state;
+  state.miradorSettings = <%= @mirador_settings.to_json.html_safe %>
+  state.loggedIn = <%= user_signed_in? %>;
+  state.isAdmin = <%= @is_admin %>
+})();
+</script>

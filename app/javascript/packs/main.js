@@ -6,6 +6,8 @@ window.DAMS = {
 
 ($ => {
   jQuery(document).ready(() => {
-    $.app = new App();
+    $.app = new App({
+      state: window.DAMS.state
+    });
   });
 })(window.DAMS);

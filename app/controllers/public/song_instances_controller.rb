@@ -26,12 +26,6 @@ class Public::SongInstancesController < ApplicationController
     @song = @song_instance.song
     @other_instances = @song_instance.other_witnesses
 
-    if current_user && current_user.role == 'admin'
-      @is_admin = true
-    else
-      @is_admin = false
-    end
-
     @mirador_settings = get_mirador_settings
   end
 

@@ -14,8 +14,7 @@ Rails.application.config.assets.version = '1.0'
   'mirador/css/mirador-combined.min.css',
   'jquery.js',
   'mirador.min.js',
-  'dependencies-no-mirador.js',
-  'dependencies-with-mirador.js',
+  'dependencies-public.js',
   'dependencies-admin.js'
 ].each do |item|
   Rails.application.config.assets.precompile << item

@@ -51,10 +51,4 @@
   </div>
 </div>
 
-<script type="text/javascript">
-  (function () {
-    var state = window.DAMS.state;
-    state.miradorSettings = <%= @mirador_settings.to_json.html_safe %>;
-    state.isAdmin = <%= @is_admin %>;
-  })();
-</script>
+<%= render 'mirador_init_state' %>
