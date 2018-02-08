@@ -6,4 +6,8 @@ export default class App {
       state: this._state
     });
   }
+
+  get miradorProxy() {
+    return this._miradorController.miradorProxy;
+  }
 }
