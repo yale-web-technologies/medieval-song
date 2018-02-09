@@ -267,7 +267,7 @@ PLATFORMS
   x86-mswin32
 
 DEPENDENCIES
-  bootstrap (~> 4.0.0.beta3)
+  bootstrap (~> 4.0.0)
   byebug (~> 9.1)
   devise (~> 4.4.0)
   handlebars_assets (~> 0.23.2)

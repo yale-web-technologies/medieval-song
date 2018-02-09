@@ -42,7 +42,7 @@ gem 'pundit', '~> 1.1.0'
 
 gem 'webpacker', '~> 3.2.0'
 gem 'popper_js', '~> 1.12.9' # requried for some bootstrap components (dropdown, etc.)
-gem 'bootstrap', '~> 4.0.0.beta3'
+gem 'bootstrap', '~> 4.0.0'
 
 gem 'handlebars_assets', '~> 0.23.2'
 
