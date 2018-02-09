@@ -63,45 +63,7 @@ class SongInstancesController < ApplicationController
     end
   end
 
-  # PATCH
-  def attach
-    logger.debug("SongInstanceController#attach params: #{params.inspect}")
-    song_instance_id = params['songInstanceId']
-    manuscript_id = params['manuscriptId']
-    target = params['target']
-    canvas_id = target[0]['full']
-
-    si = SongInstance.find(song_instance_id)
-    if si.manuscript_id == manuscript_id
-      si.target = target.to_json
-      si.canvas_id = canvas_id
-      si.save
-      render json: {
-        id: si.id,
-        target: JSON.parse(si.target)
-      }
-    else
-      render json: { errorMsg: "Song instance doesn't belong to the manuscript" },
-        status: :precondition_failed
-    end
-  end
-
-  # PATCH
-  def detach
-    logger.debug("SongInstanceController#detach params: #{params.inspect}")
-    song_instance_id = params['songInstanceId']
-
-    si = SongInstance.find(song_instance_id)
-    si.target = ''
-    si.canvas_id = ''
-    si.save
-    render json: {
-      errorCode: 0,
-      songInstanceId: song_instance_id
-    }
-  end
-
-  # DELETE /song_instances/1
+    # DELETE /song_instances/1
   # DELETE /song_instances/1.json
   def destroy
     @song_instance.destroy

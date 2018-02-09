@@ -19,7 +19,7 @@ export default class DamsEndpoint {
 
   search(options) {
     logger.debug('DamsEndpoint#search options:', options);
-    var url = '/data/annotations.json/?canvas_id=' + encodeURIComponent(options.uri);
+    const url = '/data/annotations.json/?canvas_id=' + encodeURIComponent(options.uri);
     logger.debug('DamsEndpoint#search url:', url);
 
     jQuery.ajax({
@@ -41,7 +41,7 @@ export default class DamsEndpoint {
         }
       },
       error: function (jqXHR, textStatus, errorThrown) {
-        var msg = 'DamsEndpoint#search error status code: ' +
+        const msg = 'DamsEndpoint#search error status code: ' +
           jqXHR.status + ', textStatus: ' + textStatus +
           ', errorThrown: ' + errorThrown + ', URL: ' + url;
 
@@ -84,9 +84,9 @@ export default class DamsEndpoint {
 
   update(annotation, successCallback, errorCallback) {
     logger.debug('DamsEndpoint#create annotation:', annotation);
-    var _this = this;
-    var url = '/data/annotations/update'
-    var request = {
+    const _this = this;
+    const url = '/data/annotations/update'
+    const request = {
       songInstanceId: annotation.songInstanceId,
       sequence: annotation.sequence,
       annotation: this._toBackendAnnotation(annotation)
@@ -100,7 +100,7 @@ export default class DamsEndpoint {
       contentType: 'application/json; charset=utf-8',
       success: function (data) {
         logger.debug('DamsEndpoint#create success data:', data);
-        var newAnnotation = _this._toMiradorAnnotation(data);
+        const newAnnotation = _this._toMiradorAnnotation(data);
         if (typeof successCallback === 'function') {
           successCallback(newAnnotation);
         }
@@ -115,19 +115,14 @@ export default class DamsEndpoint {
   }
 
   deleteAnnotation(annotationId, successCallback, errorCallback) {
-    logger.debug('DamsEndpoint#deleteAnnotation, annotationId:', annotationId);
-
-    var _this = this;
-    var url = '/data/song_instances/detach'
-    var request = {
-      songInstanceId: parseInt(annotationId, 10)
-    };
+    const _this = this;
+    const url = '/data/annotations/' + parseInt(annotationId, 10);
+    logger.debug('DamsEndpoint#deleteAnnotation, annotationId:', annotationId, 'url:', url);
 
     jQuery.ajax({
       url: url,
-      type: 'PATCH',
+      type: 'DELETE',
       dataType: 'json',
-      data: JSON.stringify(request),
       contentType: 'application/json; charset=utf-8',
       success: function (data) {
         logger.debug('DamsEndpoint#deleteAnnotation success data:', data);
