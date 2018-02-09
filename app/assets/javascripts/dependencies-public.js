@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require mirador.min
+//= require mirador-dialog-builder.bootstrap4
 //= require mirador-proxy
 //= require jquery_ujs
 //= require popper
