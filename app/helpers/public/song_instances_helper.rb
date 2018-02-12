@@ -5,11 +5,17 @@ title="Add to the viewer">
   <i class="fa fa-hand-o-left"></i>
 </a>}
 
+  @@external_witness_link_template = %{<a target="_blank"
+href="%{url}" title="Open in another window">
+  <i class="fa fa-external-link"></i>
+</a>}
+
   # Show an external witness
   # Clicking on the link (if present) will create a browser window or tab
   def display_external_witness(witness)
-    if witness.url && witness.url.strip != ''
-      link = %{<a target="_blank" href="#" title="Open in another window"><i class="fa fa-external-link"></i></a>}
+    url = witness.url && witness.url.strip
+    if url
+      link = @@external_witness_link_template % {url: url}
       "#{witness.label} #{link}".html_safe
     else
       witness.label
