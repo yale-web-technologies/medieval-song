@@ -1,0 +1,12 @@
+// Override a:not([href]):not([tabindex]) of Bootstrap 4
+// to show correct colors of "next/prev canvas" arrows and "bottom panel" toggle icon.
+
+.mirador-container a.hud-control {
+  color: #fff;
+  opacity: 0.6;
+
+  &:not(.hud-disabled):hover {
+    color: #fff;
+    opacity: 1;
+  }
+}
