@@ -1,8 +1,8 @@
 namespace :mirador do
-  desc 'Install Mirador'
-  task :install, [:src_dir] => [:environment, :delete, :copy_mirador] { |t, args| }
+  desc 'Install Mirador-y'
+  task :install, [:src_dir] => [:environment, :delete, :copy_mirador]
 
-  desc 'Copy Yale-Mirador'
+  desc 'Copy Mirador-y'
   task :copy_mirador, [:src_dir] => [:environment] do |t, args|
     src_root = File.expand_path(args[:src_dir])
     src_mirador = File.join(src_root, 'mirador')
