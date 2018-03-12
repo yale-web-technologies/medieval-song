@@ -24,7 +24,7 @@ namespace :mirador do
     cp_r(File.join(src_mirador, 'fonts'), public_assets)
   end
 
-  desc 'Delete Yale-Mirador'
+  desc 'Delete Mirador-y'
   task :delete => [:environment] do |t|
     [ File.join(Rails.root, 'public', 'mirador'),
       File.join(Rails.root, 'public', 'assets'),

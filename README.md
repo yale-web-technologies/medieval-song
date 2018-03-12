@@ -15,3 +15,13 @@ Webpack dev server
 ```bash
 ./bin/webpack-dev-server
 ```
+
+### Update Dependencies
+```
+bin/install_mirador.sh SRC_DIR
+```
+`SRC_DIR` is the path of `dist/` built under the project https://github.com/gigamorph/mirador-proxy .
+
+Update `/vendor/assets/javascripts/mirador-dialog-builder.bootstrap4.js` and
+`vendor/assets/javascripts/mirador-proxy.js` manually.
+

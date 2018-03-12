@@ -5,7 +5,7 @@ SRC_DIR=$1
 echo "SRC_DIR=${SRC_DIR}"
 if [ "$SRC_DIR" = "" ]; then
   echo "Usage: $0 <src_dir>"
-  echo "    where <src_dir> is the root directory of the mirador build"
+  echo "    where <src_dir> is the root directory of the mirador-y build"
 else
   rake mirador:install[${SRC_DIR}]
 fi
